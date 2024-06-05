@@ -1,0 +1,8 @@
+.movieCard {
+    text-align: center;
+}
+
+.movieCard img {
+    height: 375px;
+    width: 270px;
+}
