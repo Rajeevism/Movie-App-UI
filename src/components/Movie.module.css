@@ -20,11 +20,25 @@
     background-color: black;
 }
 
-.about {
+.aboutLine {
     font-size: 18px;
 }
 
 .heading {
     font-size: 25px;
     text-decoration: underline;
+}
+
+.about {
+    padding: 40px;
+    padding-left: 50px;
+}
+
+.castHeader {
+    padding-left: 50px;
+}
+
+.castCard {
+    display: flex;
+    flex-direction: row;
 }
