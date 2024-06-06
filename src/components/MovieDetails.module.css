@@ -1,0 +1,42 @@
+.movieDetailsStyle {
+    color: blanchedalmond;
+    padding: 30px;
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: rgba(27, 1, 1, 0.6);
+}
+
+.header {
+    font-size: 35px;
+}
+
+.ratings {
+    font-size: 25px;
+    padding: 1rem;
+    background-color: rgba(33, 1, 1, 0.73);
+    font-weight: bolder;
+}
+
+.lablang {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.labelLang {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.remDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.showTime {
+    margin: 10px;
+}

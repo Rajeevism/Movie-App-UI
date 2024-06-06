@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { MovieDetails } from "../movieData";
+import { MovieDetails } from "../allMovieData";
 import MovieCard from "./MovieCard";
 export default function ImgSlide() {
   return (

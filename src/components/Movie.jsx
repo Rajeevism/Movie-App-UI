@@ -2,14 +2,21 @@ import GarudanImg from "../assests/garudan.png";
 import { CastDetails } from "./Cast";
 import CastCard from "./CastCard";
 import MovieStyler from "./Movie.module.css";
+import MovieDetails from "./MovieDetails";
+import { displayData } from "./movieData";
 
 export default function Movies() {
-  console.log("in movie");
   return (
     <div>
       <section className={MovieStyler.trailerSection}>
         <div className={MovieStyler.gradient}>
-          <img className={MovieStyler.trailerNavImg} src={GarudanImg} />
+          <div className={MovieStyler.movieImageDesc}>
+            <div>
+              <img className={MovieStyler.trailerNavImg} src={GarudanImg} />
+              <p className={MovieStyler.para}>In Cinemas</p>
+            </div>
+            <MovieDetails {...displayData[0]} />
+          </div>
         </div>
       </section>
       <section className={MovieStyler.about}>

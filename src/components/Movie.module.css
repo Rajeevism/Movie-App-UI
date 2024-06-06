@@ -5,19 +5,37 @@
 }
 
 .trailerNavImg {
-    width: 20%;
+
     height: 400px;
     background-color: black;
+    border-radius: 16px 16px 0px 0px;
+    padding-left: 75px;
+}
+
+.para {
+    font-size: 15px;
+    color: bisque;
+    padding-left: 75px;
+    background-color: black;
+    margin: 0;
+    text-align: center;
 }
 
 .gradient {
     background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(234, 234, 234, 0.2) 80%);
+}
 
+.movieImageDesc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .trailerSection {
-    background: url("../assests/garudan-bg.avif");
+    object-fit: cover;
+    background: url("../assests/garudan-bg.avif") no-repeat center;
     background-color: black;
+    width: 100%;
 }
 
 .aboutLine {
