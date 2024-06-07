@@ -22,13 +22,14 @@
 }
 
 .gradient {
-    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(234, 234, 234, 0.2) 80%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, rgba(234, 234, 234, 0.2) 90%);
 }
 
 .movieImageDesc {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 35px;
 }
 
 .trailerSection {

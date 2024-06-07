@@ -1,5 +1,5 @@
 import castCardStyler from "./CastCard.module.css";
-export default function CastCard({ image, name, role }) {
+export default function ({ image, name, role }) {
   return (
     <div>
       <section className={castCardStyler.cast}>

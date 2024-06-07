@@ -1,6 +1,8 @@
 import GarudanImg from "../assests/garudan.png";
 import { CastDetails } from "./Cast";
 import CastCard from "./CastCard";
+import { CrewDetails } from "./Crew";
+import CrewCard from "./CrewCard";
 import MovieStyler from "./Movie.module.css";
 import MovieDetails from "./MovieDetails";
 import { displayData } from "./movieData";
@@ -38,6 +40,18 @@ export default function Movies() {
           <CastCard {...CastDetails[3]} />
           <CastCard {...CastDetails[4]} />
           <CastCard {...CastDetails[5]} />
+        </section>
+      </div>
+      <hr />
+      <div>
+        <section className={MovieStyler.castHeader}>
+          <h2>Crew</h2>
+        </section>
+        <section className={MovieStyler.castCard}>
+          <CrewCard {...CrewDetails[0]} />
+          <CrewCard {...CrewDetails[1]} />
+          <CrewCard {...CrewDetails[2]} />
+          <CrewCard {...CrewDetails[3]} />
         </section>
       </div>
     </div>

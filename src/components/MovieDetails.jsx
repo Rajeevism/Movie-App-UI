@@ -13,10 +13,14 @@ export default function MovieDetails({
     <div>
       <section className={MovieDetailsStyler.movieDetailsStyle}>
         <section className={MovieDetailsStyler.header}>
-          <h2>{name}</h2>
+          <div>{name}</div>
         </section>
         <section>
-          <p className={MovieDetailsStyler.ratings}>{ratings}</p>
+          <p className={MovieDetailsStyler.ratings}>
+            <span className={MovieDetailsStyler.emoji}>&#128077;</span>
+            {ratings}
+            <button className={MovieDetailsStyler.ratingbtn}>Rate Now</button>
+          </p>
           <div className="lablang">
             <button type="button" className={MovieDetailsStyler.labelLang}>
               {label}
@@ -31,6 +35,7 @@ export default function MovieDetails({
             <p className={MovieDetailsStyler.showTime}>{certificate}</p>
             <p className={MovieDetailsStyler.showTime}>{releaseDate}</p>
           </div>
+          <button className={MovieDetailsStyler.btn}>Book Tickets</button>
         </section>
       </section>
     </div>
