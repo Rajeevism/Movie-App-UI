@@ -1,10 +1,7 @@
 .cast {
-    padding: 25px;
-    padding-left: 50px;
-}
-
-.details {
-    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
 }
 
 .imageStyle {

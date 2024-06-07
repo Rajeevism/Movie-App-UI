@@ -16,11 +16,11 @@ export default function MovieDetails({
           <div>{name}</div>
         </section>
         <section>
-          <p className={MovieDetailsStyler.ratings}>
+          <div className={MovieDetailsStyler.ratings}>
             <span className={MovieDetailsStyler.emoji}>&#128077;</span>
-            {ratings}
+            <p>{ratings}</p>
             <button className={MovieDetailsStyler.ratingbtn}>Rate Now</button>
-          </p>
+          </div>
           <div className="lablang">
             <button type="button" className={MovieDetailsStyler.labelLang}>
               {label}

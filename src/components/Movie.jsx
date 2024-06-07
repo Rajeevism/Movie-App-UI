@@ -21,38 +21,40 @@ export default function Movies() {
           </div>
         </div>
       </section>
-      <section className={MovieStyler.about}>
-        <h2 className={MovieStyler.heading}>About the Movie</h2>
-        <p className={MovieStyler.aboutLine}>
-          The movie revolves around how the innocent are affected when the
-          minister wants to get the land belonging to a temple.
-        </p>
-      </section>
-      <hr />
-      <div>
-        <section className={MovieStyler.castHeader}>
-          <h2>Cast</h2>
+      <div className={MovieStyler.body}>
+        <section className={MovieStyler.about}>
+          <h2 className={MovieStyler.heading}>About the Movie</h2>
+          <p className={MovieStyler.aboutLine}>
+            The movie revolves around how the innocent are affected when the
+            minister wants to get the land belonging to a temple.
+          </p>
         </section>
-        <section className={MovieStyler.castCard}>
-          <CastCard {...CastDetails[0]} />
-          <CastCard {...CastDetails[1]} />
-          <CastCard {...CastDetails[2]} />
-          <CastCard {...CastDetails[3]} />
-          <CastCard {...CastDetails[4]} />
-          <CastCard {...CastDetails[5]} />
-        </section>
-      </div>
-      <hr />
-      <div>
-        <section className={MovieStyler.castHeader}>
-          <h2>Crew</h2>
-        </section>
-        <section className={MovieStyler.castCard}>
-          <CrewCard {...CrewDetails[0]} />
-          <CrewCard {...CrewDetails[1]} />
-          <CrewCard {...CrewDetails[2]} />
-          <CrewCard {...CrewDetails[3]} />
-        </section>
+        <hr />
+        <div>
+          <section className={MovieStyler.castHeader}>
+            <h2>Cast</h2>
+          </section>
+          <section className={MovieStyler.castCard}>
+            <CastCard {...CastDetails[0]} />
+            <CastCard {...CastDetails[1]} />
+            <CastCard {...CastDetails[2]} />
+            <CastCard {...CastDetails[3]} />
+            <CastCard {...CastDetails[4]} />
+            <CastCard {...CastDetails[5]} />
+          </section>
+        </div>
+        <hr />
+        <div>
+          <section className={MovieStyler.castHeader}>
+            <h2>Crew</h2>
+          </section>
+          <section className={MovieStyler.castCard}>
+            <CrewCard {...CrewDetails[0]} />
+            <CrewCard {...CrewDetails[1]} />
+            <CrewCard {...CrewDetails[2]} />
+            <CrewCard {...CrewDetails[3]} />
+          </section>
+        </div>
       </div>
     </div>
   );
