@@ -4,7 +4,21 @@
     padding: 0 25px;
 }
 
+.castDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(57, 57, 57);
+}
+
 .imageStyle {
     border-radius: 50%;
     width: 160px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
 }

@@ -3,9 +3,9 @@ export default function ({ image, name, role }) {
   return (
     <section className={castCardStyler.cast}>
       <img className={castCardStyler.imageStyle} src={image} />
-      <div className={castCardStyler.details}>
-        <h4>{name}</h4>
-        <p>{role}</p>
+      <div className={castCardStyler.castDetails}>
+        <div className={castCardStyler.name}>{name}</div>
+        <div>{role}</div>
       </div>
     </section>
   );
