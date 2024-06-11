@@ -1,11 +1,15 @@
 import Header from "./components/Header";
-import ImageSlider from "./components/ImageSlider";
-import Movie from "./components/Movie";
+import AppRoutes from './routers/appRoutes.jsx';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+
 function App() {
   return (
     <div>
       <Header />
-      <Movie />
+      <Router>
+        <AppRoutes />
+      </Router>
       {/*       
       <div className="header">
         <h2>Movies in Chennai</h2>
