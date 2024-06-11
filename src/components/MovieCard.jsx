@@ -4,13 +4,13 @@ export default function MovieCard({ id, image, title, certificate, language }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/movies/' + id);
+    navigate("/movies/" + id);
   };
 
   return (
     <div>
-      <section className={MovieCardStyler.movieCard} onClick={handleClick}>
-        <img src={image} />
+      <section className={MovieCardStyler.movieCard}>
+        <img src={image} onClick={handleClick} />
         <h3>{title}</h3>
         <p>{certificate}</p>
         <p>{language}</p>

@@ -2,12 +2,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { MovieDetails } from "../allMovieData";
 import MovieCard from "./MovieCard";
-import Movies from "./Movie";
 export default function MovieHome() {
   return (
     <div>
-
-
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -32,7 +29,7 @@ export default function MovieHome() {
               max: 3000,
               min: 1024,
             },
-            items: 3,
+            items: 5,
             partialVisibilityGutter: 40,
           },
           mobile: {

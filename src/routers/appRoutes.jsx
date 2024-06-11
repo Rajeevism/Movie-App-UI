@@ -1,8 +1,8 @@
 // AppRoutes.js
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import MovieHome from '../components/MovieHome';
-import Movies from '../components/Movie';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import MovieHome from "../components/MovieHome";
+import Movies from "../components/Movie";
 
 const AppRoutes = () => (
   <Routes>

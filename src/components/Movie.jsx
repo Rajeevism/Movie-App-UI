@@ -1,21 +1,31 @@
-import GarudanImg from "../assests/garudan.png";
-import { CastDetails } from "./Cast";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import CastCard from "./CastCard";
-import { CrewDetails } from "./Crew";
 import CrewCard from "./CrewCard";
 import MovieStyler from "./Movie.module.css";
 import MovieDetails from "./MovieDetails";
 import { getMovieById } from "./movieData";
-
-import { useParams } from 'react-router-dom';
-
+import { getArtistsByMovieId } from "./Artists";
+import { useParams } from "react-router-dom";
 
 export default function Movies() {
   const { movieId } = useParams();
-  const movie = getMovieById(movieId)
+  const movie = getMovieById(movieId);
+  console.log(movie);
+
+  const artists = getArtistsByMovieId(movieId);
+  console.log("artists: ", artists);
+  const castMembers = artists.castMembers;
+  const crewMembers = artists.crewMembers;
+
   return (
     <div>
-      <section className={MovieStyler.trailerSection}>
+      <div
+        className={MovieStyler.trailerSection}
+        style={{
+          backgroundImage: "url(" + movie.backgroundImage + ")",
+        }}
+      >
         <div className={MovieStyler.gradient}>
           <div className={MovieStyler.movieImageDesc}>
             <div>
@@ -25,13 +35,11 @@ export default function Movies() {
             <MovieDetails {...movie} />
           </div>
         </div>
-      </section>
+      </div>
       <div className={MovieStyler.body}>
         <section className={MovieStyler.about}>
           <h2 className={MovieStyler.heading}>About the Movie</h2>
-          <p className={MovieStyler.aboutLine}>
-            {movie.summary}
-          </p>
+          <p className={MovieStyler.aboutLine}>{movie.summary}</p>
         </section>
         <hr />
         <div>
@@ -39,12 +47,9 @@ export default function Movies() {
             <h2>Cast</h2>
           </section>
           <section className={MovieStyler.castCard}>
-            <CastCard {...CastDetails[0]} />
-            <CastCard {...CastDetails[1]} />
-            <CastCard {...CastDetails[2]} />
-            <CastCard {...CastDetails[3]} />
-            <CastCard {...CastDetails[4]} />
-            <CastCard {...CastDetails[5]} />
+            {castMembers.map((castMember, idx) => (
+              <CastCard key={idx} {...castMember} />
+            ))}
           </section>
         </div>
         <hr />
@@ -53,10 +58,9 @@ export default function Movies() {
             <h2>Crew</h2>
           </section>
           <section className={MovieStyler.castCard}>
-            <CrewCard {...CrewDetails[0]} />
-            <CrewCard {...CrewDetails[1]} />
-            <CrewCard {...CrewDetails[2]} />
-            <CrewCard {...CrewDetails[3]} />
+            {crewMembers.map((crewMember, idx) => (
+              <CrewCard key={idx} {...crewMember} />
+            ))}
           </section>
         </div>
       </div>
