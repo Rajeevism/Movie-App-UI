@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import CastCard from "../cast/CastCard";
 import CrewCard from "../crew/CrewCard";
 import MovieDetails from "../movieDetails/MovieDetails";
@@ -48,22 +49,130 @@ export default function MoviePage() {
           <section className={MovieStyler.castHeader}>
             <h2>Cast</h2>
           </section>
-          <section className={MovieStyler.castCard}>
-            {castMembers.map((castMember, idx) => (
-              <CastCard key={idx} {...castMember} />
-            ))}
-          </section>
+          <div>
+            <Carousel
+              additionalTransfrom={0}
+              arrows
+              autoPlaySpeed={3000}
+              centerMode={false}
+              className=""
+              containerClass="container"
+              dotListClass=""
+              draggable
+              focusOnSelect={false}
+              infinite={false}
+              itemClass=""
+              keyBoardControl
+              minimumTouchDrag={80}
+              pauseOnHover
+              renderArrowsWhenDisabled={false}
+              renderButtonGroupOutside={false}
+              renderDotsOutside={false}
+              responsive={{
+                desktop: {
+                  breakpoint: {
+                    max: 3000,
+                    min: 1024,
+                  },
+                  items: 5,
+                  partialVisibilityGutter: 40,
+                },
+                mobile: {
+                  breakpoint: {
+                    max: 464,
+                    min: 0,
+                  },
+                  items: 1,
+                  partialVisibilityGutter: 30,
+                },
+                tablet: {
+                  breakpoint: {
+                    max: 1024,
+                    min: 464,
+                  },
+                  items: 2,
+                  partialVisibilityGutter: 30,
+                },
+              }}
+              rewind={false}
+              rewindWithAnimation={false}
+              rtl={false}
+              shouldResetAutoplay
+              showDots={false}
+              sliderClass=""
+              slidesToSlide={2}
+              swipeable
+            >
+              {castMembers.map((castMember, idx) => (
+                <CastCard key={idx} {...castMember} />
+              ))}
+            </Carousel>
+          </div>
         </div>
         <hr />
         <div>
           <section className={MovieStyler.castHeader}>
             <h2>Crew</h2>
           </section>
-          <section className={MovieStyler.castCard}>
-            {crewMembers.map((crewMember, idx) => (
-              <CrewCard key={idx} {...crewMember} />
-            ))}
-          </section>
+          <div>
+            <Carousel
+              additionalTransfrom={0}
+              arrows
+              autoPlaySpeed={3000}
+              centerMode={false}
+              className=""
+              containerClass="container"
+              dotListClass=""
+              draggable
+              focusOnSelect={false}
+              infinite={false}
+              itemClass=""
+              keyBoardControl
+              minimumTouchDrag={80}
+              pauseOnHover
+              renderArrowsWhenDisabled={false}
+              renderButtonGroupOutside={false}
+              renderDotsOutside={false}
+              responsive={{
+                desktop: {
+                  breakpoint: {
+                    max: 3000,
+                    min: 1024,
+                  },
+                  items: 5,
+                  partialVisibilityGutter: 40,
+                },
+                mobile: {
+                  breakpoint: {
+                    max: 464,
+                    min: 0,
+                  },
+                  items: 1,
+                  partialVisibilityGutter: 30,
+                },
+                tablet: {
+                  breakpoint: {
+                    max: 1024,
+                    min: 464,
+                  },
+                  items: 2,
+                  partialVisibilityGutter: 30,
+                },
+              }}
+              rewind={false}
+              rewindWithAnimation={false}
+              rtl={false}
+              shouldResetAutoplay
+              showDots={false}
+              sliderClass=""
+              slidesToSlide={2}
+              swipeable
+            >
+              {crewMembers.map((crewMember, idx) => (
+                <CrewCard key={idx} {...crewMember} />
+              ))}
+            </Carousel>
+          </div>
         </div>
       </div>
     </div>

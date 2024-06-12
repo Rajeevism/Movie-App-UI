@@ -1,7 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import MovieCardStyler from "./MovieSummaryCard.module.css";
 
-export default function MovieSummaryCard({ id, image, title, certificate, language }) {
+export default function MovieSummaryCard({
+  id,
+  image,
+  title,
+  certificate,
+  language,
+}) {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -12,9 +18,11 @@ export default function MovieSummaryCard({ id, image, title, certificate, langua
     <div>
       <section className={MovieCardStyler.movieCard}>
         <img src={image} onClick={handleClick} />
-        <h3>{title}</h3>
-        <p>{certificate}</p>
-        <p>{language}</p>
+        <div className={MovieCardStyler.title}>{title}</div>
+        <div className={MovieCardStyler.certiAndLang}>
+          <div>{certificate}</div>
+          <div>{language}</div>
+        </div>
       </section>
     </div>
   );

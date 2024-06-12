@@ -17,7 +17,6 @@ export default function Header() {
           </button>
         </section>
       </div>
-      <h3>Movies in Chennai</h3>
     </div>
   );
 }

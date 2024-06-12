@@ -1,0 +1,12 @@
+.movieBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem 6rem 0 9rem;
+}
+
+.location {
+    padding: 1rem 0 0 9rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}

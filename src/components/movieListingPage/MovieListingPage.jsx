@@ -1,71 +1,31 @@
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-
-import movieListingDetails from "../../data/movieListingDetails";
+import MovieListingPageStyler from "./MovieListingPage.module.css";
 import MovieSummaryCard from "../movieSummary/MovieSummaryCard";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function MovieListingPage() {
-  useEffect(() => { }, [])
+  const [movieListings, setMovieListings] = useState([]);
+
+  const getMovieListings = async () => {
+    const resp = await axios.get("http://localhost:3000/movies");
+    console.log(resp.data);
+    setMovieListings(resp.data);
+  };
+
+  useEffect(() => {
+    getMovieListings();
+  }, []);
+
+  console.log("inside movielisting render:", movieListings);
 
   return (
     <div>
-      <Carousel
-        additionalTransfrom={0}
-        arrows
-        autoPlaySpeed={3000}
-        centerMode={false}
-        className=""
-        containerClass="container"
-        dotListClass=""
-        draggable
-        focusOnSelect={false}
-        infinite={false}
-        itemClass=""
-        keyBoardControl
-        minimumTouchDrag={80}
-        pauseOnHover
-        renderArrowsWhenDisabled={false}
-        renderButtonGroupOutside={false}
-        renderDotsOutside={false}
-        responsive={{
-          desktop: {
-            breakpoint: {
-              max: 3000,
-              min: 1024,
-            },
-            items: 5,
-            partialVisibilityGutter: 40,
-          },
-          mobile: {
-            breakpoint: {
-              max: 464,
-              min: 0,
-            },
-            items: 1,
-            partialVisibilityGutter: 30,
-          },
-          tablet: {
-            breakpoint: {
-              max: 1024,
-              min: 464,
-            },
-            items: 2,
-            partialVisibilityGutter: 30,
-          },
-        }}
-        rewind={false}
-        rewindWithAnimation={false}
-        rtl={false}
-        shouldResetAutoplay
-        showDots={false}
-        sliderClass=""
-        slidesToSlide={2}
-        swipeable
-      >
-        {movieListingDetails.map((movieDetail, idx) => <MovieSummaryCard key={idx} {...movieDetail} />)}
-      </Carousel>
+      <div className={MovieListingPageStyler.location}>Movies in Chennai</div>
+      <div className={MovieListingPageStyler.movieBlock}>
+        {movieListings.map((movieDetail, idx) => (
+          <MovieSummaryCard key={idx} {...movieDetail} />
+        ))}
+      </div>
     </div>
   );
 }
