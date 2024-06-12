@@ -15,4 +15,11 @@ export const MovieDetails = [
     certificate: "U",
     language: "Tamil",
   },
+  {
+    id: "2",
+    image: PTsirImg,
+    title: "PT sir",
+    certificate: "U",
+    language: "Tamil",
+  },
 ];

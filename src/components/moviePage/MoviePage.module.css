@@ -40,7 +40,7 @@
 
 .trailerSection {
     object-fit: cover;
-    /* background: url("../assests/garudan-bg.avif") no-repeat center; */
+    /* background: url("../assets/garudan-bg.avif") no-repeat center; */
     background-color: black;
     width: 100%;
 }

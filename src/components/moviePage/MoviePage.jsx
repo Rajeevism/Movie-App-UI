@@ -1,14 +1,16 @@
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import CastCard from "./CastCard";
-import CrewCard from "./CrewCard";
-import MovieStyler from "./Movie.module.css";
-import MovieDetails from "./MovieDetails";
-import { getMovieById } from "./movieData";
-import { getArtistsByMovieId } from "./Artists";
 import { useParams } from "react-router-dom";
 
-export default function Movies() {
+import CastCard from "../cast/CastCard";
+import CrewCard from "../crew/CrewCard";
+import MovieDetails from "../movieDetails/MovieDetails";
+
+import MovieStyler from "./MoviePage.module.css";
+import "react-multi-carousel/lib/styles.css";
+
+import { getMovieById } from "../../data/moviesDetails";
+import { getArtistsByMovieId } from "../../data/movieArtists";
+
+export default function MoviePage() {
   const { movieId } = useParams();
   const movie = getMovieById(movieId);
   console.log(movie);

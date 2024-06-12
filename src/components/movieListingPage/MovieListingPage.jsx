@@ -1,8 +1,14 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { MovieDetails } from "../allMovieData";
-import MovieCard from "./MovieCard";
-export default function MovieHome() {
+
+import movieListingDetails from "../../data/movieListingDetails";
+import MovieSummaryCard from "../movieSummary/MovieSummaryCard";
+import { useEffect } from "react";
+
+
+export default function MovieListingPage() {
+  useEffect(() => { }, [])
+
   return (
     <div>
       <Carousel
@@ -58,12 +64,7 @@ export default function MovieHome() {
         slidesToSlide={2}
         swipeable
       >
-        <MovieCard {...MovieDetails[0]} />
-        <MovieCard {...MovieDetails[1]} />
-        <MovieCard {...MovieDetails[0]} />
-        <MovieCard {...MovieDetails[1]} />
-        <MovieCard {...MovieDetails[0]} />
-        <MovieCard {...MovieDetails[1]} />
+        {movieListingDetails.map((movieDetail, idx) => <MovieSummaryCard key={idx} {...movieDetail} />)}
       </Carousel>
     </div>
   );

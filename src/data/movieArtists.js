@@ -1,26 +1,27 @@
-import Soori from "../assests/soori.avif";
-import Sasikumar from "../assests/sasikumar.avif";
-import UnniMukundan from "../assests/unni-mukundan.avif";
-import Samuthirakani from "../assests/samuthirakani.avif";
-import MimeGopi from "../assests/mime-gopi.avif";
-import Vadivukkarasi from "../assests/vadivukkarasi.avif";
-import HiphopAdhi from "../assests/hiphopadhi.avif";
-import Kashmira from "../assests/kashmira.avif";
-import Anikha from "../assests/anikha-surendran.avif";
-import Bhagyaraj from "../assests/k-bhagyaraj.avif";
-import Prabhu from "../assests/prabhu.avif";
-import Munishkanth from "../assests/munishkanth.avif";
-import Thiagarajan from "../assests/thiagarajan.avif";
-import Pandiarajan from "../assests/pandiarajan.avif";
-import Devadarshini from "../assests/devadarshini.avif";
-import SenthilKuamr from "../assests/r-s-durai-senthilkumar.avif";
-import Vetrimaran from "../assests/vetrimaaran.avif";
-import YuvanShankarRaja from "../assests/yuvan-shankar-raja.avif";
-import ArthurWilson from "../assests/arthur-wilson.avif";
-import Karthik from "../assests/karthik-venugopal.avif";
-import Prasanna from "../assests/prasanna.avif";
-import Nayak from "../assests/tapas-nayak.avif";
-export const ArtistDetails = [
+import Soori from "../assets/soori.avif";
+import Sasikumar from "../assets/sasikumar.avif";
+import UnniMukundan from "../assets/unni-mukundan.avif";
+import Samuthirakani from "../assets/samuthirakani.avif";
+import MimeGopi from "../assets/mime-gopi.avif";
+import Vadivukkarasi from "../assets/vadivukkarasi.avif";
+import HiphopAdhi from "../assets/hiphopadhi.avif";
+import Kashmira from "../assets/kashmira.avif";
+import Anikha from "../assets/anikha-surendran.avif";
+import Bhagyaraj from "../assets/k-bhagyaraj.avif";
+import Prabhu from "../assets/prabhu.avif";
+import Munishkanth from "../assets/munishkanth.avif";
+import Thiagarajan from "../assets/thiagarajan.avif";
+import Pandiarajan from "../assets/pandiarajan.avif";
+import Devadarshini from "../assets/devadarshini.avif";
+import SenthilKuamr from "../assets/r-s-durai-senthilkumar.avif";
+import Vetrimaran from "../assets/vetrimaaran.avif";
+import YuvanShankarRaja from "../assets/yuvan-shankar-raja.avif";
+import ArthurWilson from "../assets/arthur-wilson.avif";
+import Karthik from "../assets/karthik-venugopal.avif";
+import Prasanna from "../assets/prasanna.avif";
+import Nayak from "../assets/tapas-nayak.avif";
+
+export const artistDetails = [
   {
     id: 1,
     castMembers: [
@@ -154,7 +155,7 @@ export const ArtistDetails = [
 
 export function getArtistsByMovieId(id) {
   console.log("Get the Artists by movie  id: ", id);
-  let artists = ArtistDetails.filter((data) => data.id == id);
+  let artists = artistDetails.filter((data) => data.id == id);
   console.log("artists:", artists);
   return artists.length > 0 ? artists[0] : undefined;
 }

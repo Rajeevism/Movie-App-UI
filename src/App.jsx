@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Header from "./components/header/Header.jsx";
 import AppRoutes from "./routers/appRoutes.jsx";
 import { BrowserRouter as Router } from "react-router-dom";
 

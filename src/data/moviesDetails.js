@@ -1,7 +1,7 @@
-import GarudanImg from "../assests/garudan.png";
-import PTSirImg from "../assests/PTsir.png";
+import GarudanImg from "../assets/garudan.png";
+import PTSirImg from "../assets/PTsir.png";
 
-export const displayData = [
+export const moviesDetails = [
   {
     id: 1,
     name: "Garudan",
@@ -36,7 +36,7 @@ export const displayData = [
 
 export function getMovieById(id) {
   console.log("in get movie by id: ", id);
-  let movie = displayData.filter((data) => data.id == id);
+  let movie = moviesDetails.filter((data) => data.id == id);
   console.log("movie:", movie);
   return movie.length > 0 ? movie[0] : undefined;
 }

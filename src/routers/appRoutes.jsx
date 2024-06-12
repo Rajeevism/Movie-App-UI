@@ -1,13 +1,13 @@
-// AppRoutes.js
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import MovieHome from "../components/MovieHome";
-import Movies from "../components/Movie";
+
+import MoviePage from "../components/moviePage/MoviePage";
+import MovieListingPage from "../components/movieListingPage/MovieListingPage";
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<MovieHome />} />
-    <Route path="/movies/:movieId" element={<Movies />} />
+    <Route path="/" element={<MovieListingPage />} />
+    <Route path="/movies/:movieId" element={<MoviePage />} />
   </Routes>
 );
 

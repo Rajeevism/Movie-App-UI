@@ -1,4 +1,4 @@
-import castCardStyler from "./CastCard.module.css";
+import castCardStyler from "./CrewCard.module.css";
 export default function ({ image, name, role }) {
   return (
     <section className={castCardStyler.cast}>
