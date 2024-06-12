@@ -3,10 +3,10 @@ import MovieCardStyler from "./MovieSummaryCard.module.css";
 
 export default function MovieSummaryCard({
   id,
-  image,
-  title,
+  image_url,
+  movie_name,
   certificate,
-  language,
+  languages,
 }) {
   const navigate = useNavigate();
 
@@ -17,11 +17,11 @@ export default function MovieSummaryCard({
   return (
     <div>
       <section className={MovieCardStyler.movieCard}>
-        <img src={image} onClick={handleClick} />
-        <div className={MovieCardStyler.title}>{title}</div>
+        <img src={image_url} onClick={handleClick} />
+        <div className={MovieCardStyler.title}>{movie_name}</div>
         <div className={MovieCardStyler.certiAndLang}>
           <div>{certificate}</div>
-          <div>{language}</div>
+          <div>{...languages}</div>
         </div>
       </section>
     </div>

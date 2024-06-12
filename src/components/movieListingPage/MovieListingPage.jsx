@@ -7,7 +7,7 @@ export default function MovieListingPage() {
   const [movieListings, setMovieListings] = useState([]);
 
   const getMovieListings = async () => {
-    const resp = await axios.get("http://localhost:3000/movies");
+    const resp = await axios.get("http://localhost:8000/movies");
     console.log(resp.data);
     setMovieListings(resp.data);
   };
