@@ -1,48 +1,54 @@
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CastCard from "../cast/CastCard";
 import CrewCard from "../crew/CrewCard";
 import MovieDetails from "../movieDetails/MovieDetails";
-
 import MovieStyler from "./MoviePage.module.css";
 import "react-multi-carousel/lib/styles.css";
-
 import { getMovieById } from "../../data/moviesDetails";
 import { getArtistsByMovieId } from "../../data/movieArtists";
 
-export default function MoviePage() {
-  const { movieId } = useParams();
-  const movie = getMovieById(movieId);
-  console.log(movie);
+export default function MoviePage({ id, about, image_url, background_image }) {
+  const [movies, setMovies] = useState([]);
 
-  const artists = getArtistsByMovieId(movieId);
-  console.log("artists: ", artists);
-  const castMembers = artists.castMembers;
-  const crewMembers = artists.crewMembers;
+  const getMovieById = async () => {
+    const resp = await axios.get("http://localhost:8000/movies/" + id);
+    console.log(resp.data);
+    setMovies(resp.data);
+  };
+
+  useEffect(() => {
+    getMovieById();
+  }, []);
+
+  console.log("inside movielisting render:", movies);
 
   return (
     <div>
       <div
         className={MovieStyler.trailerSection}
         style={{
-          backgroundImage: "url(" + movie.backgroundImage + ")",
+          backgroundImage: "url(" + background_image + ")",
         }}
       >
         <div className={MovieStyler.gradient}>
           <div className={MovieStyler.movieImageDesc}>
             <div>
-              <img className={MovieStyler.trailerNavImg} src={movie.image} />
+              <img className={MovieStyler.trailerNavImg} src={image_url} />
               <p className={MovieStyler.para}>In Cinemas</p>
             </div>
-            <MovieDetails {...movie} />
+            {movies.map((movieDetails, idx) => (
+              <MovieDetails key={idx} {...movieDetails} />
+            ))}
           </div>
         </div>
       </div>
       <div className={MovieStyler.body}>
         <section className={MovieStyler.about}>
           <h2 className={MovieStyler.heading}>About the Movie</h2>
-          <p className={MovieStyler.aboutLine}>{movie.summary}</p>
+          <p className={MovieStyler.aboutLine}>{about}</p>
         </section>
         <hr />
         <div>
@@ -103,7 +109,7 @@ export default function MoviePage() {
               slidesToSlide={2}
               swipeable
             >
-              {castMembers.map((castMember, idx) => (
+              {movies.map((castMember, idx) => (
                 <CastCard key={idx} {...castMember} />
               ))}
             </Carousel>
@@ -168,7 +174,7 @@ export default function MoviePage() {
               slidesToSlide={2}
               swipeable
             >
-              {crewMembers.map((crewMember, idx) => (
+              {movies.map((crewMember, idx) => (
                 <CrewCard key={idx} {...crewMember} />
               ))}
             </Carousel>

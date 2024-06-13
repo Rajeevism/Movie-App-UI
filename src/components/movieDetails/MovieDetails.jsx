@@ -1,24 +1,24 @@
 import MovieDetailsStyler from "./MovieDetails.module.css";
 export default function MovieDetails({
-  name,
-  ratings,
-  label,
-  language,
-  showTime,
-  genre,
+  movie_name,
+  languages,
   certificate,
-  releaseDate,
+  imdb_rating,
+  label,
+  genre,
+  movie_duration,
+  release_date,
 }) {
   return (
     <div>
       <section className={MovieDetailsStyler.movieDetailsStyle}>
         <section className={MovieDetailsStyler.header}>
-          <div>{name}</div>
+          <div>{movie_name}</div>
         </section>
         <section>
           <div className={MovieDetailsStyler.ratings}>
             <span className={MovieDetailsStyler.emoji}>&#128077;</span>
-            <p>{ratings}</p>
+            <p>{imdb_rating}</p>
             <button className={MovieDetailsStyler.ratingbtn}>Rate Now</button>
           </div>
           <div className="lablang">
@@ -26,14 +26,14 @@ export default function MovieDetails({
               {label}
             </button>
             <button type="button" className={MovieDetailsStyler.labelLang}>
-              {language}
+              {languages}
             </button>
           </div>
           <div className={MovieDetailsStyler.remDetails}>
-            <p className={MovieDetailsStyler.showTime}>{showTime}</p>
+            <p className={MovieDetailsStyler.showTime}>{movie_duration}</p>
             <p className={MovieDetailsStyler.showTime}>{genre}</p>
             <p className={MovieDetailsStyler.showTime}>{certificate}</p>
-            <p className={MovieDetailsStyler.showTime}>{releaseDate}</p>
+            <p className={MovieDetailsStyler.showTime}>{release_date}</p>
           </div>
           <button className={MovieDetailsStyler.btn}>Book Tickets</button>
         </section>
