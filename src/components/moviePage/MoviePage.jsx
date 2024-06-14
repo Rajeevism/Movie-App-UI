@@ -39,9 +39,7 @@ export default function MoviePage() {
               />
               <p className={MovieStyler.para}>In Cinemas</p>
             </div>
-            {movie.map((movieDetails, idx) => (
-              <MovieDetails key={idx} {...movieDetails} />
-            ))}
+            <MovieDetails />
           </div>
         </div>
       </div>
@@ -109,9 +107,7 @@ export default function MoviePage() {
               slidesToSlide={2}
               swipeable
             >
-              {movie.map((castMember, idx) => (
-                <CastCard key={idx} {...castMember} />
-              ))}
+              <CastCard />
             </Carousel>
           </div>
         </div>
@@ -174,9 +170,7 @@ export default function MoviePage() {
               slidesToSlide={2}
               swipeable
             >
-              {movie.map((crewMember, idx) => (
-                <CrewCard key={idx} {...crewMember} />
-              ))}
+              <CrewCard />
             </Carousel>
           </div>
         </div>
