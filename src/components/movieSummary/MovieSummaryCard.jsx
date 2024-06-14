@@ -11,6 +11,7 @@ export default function MovieSummaryCard({
   const navigate = useNavigate();
 
   const handleClick = () => {
+    console.log("Handle Click: " + id);
     navigate("/movies/" + id);
   };
 
