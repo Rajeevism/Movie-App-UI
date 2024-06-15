@@ -32,7 +32,7 @@ export default function MovieDetails() {
               {movieDetails.label}
             </button>
             <button type="button" className={MovieDetailsStyler.labelLang}>
-              {/* {movieDetails.languages} */}
+              {movieDetails.languages.map((lang) => lang.language)}
             </button>
           </div>
           <div className={MovieDetailsStyler.remDetails}>
