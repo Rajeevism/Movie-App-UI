@@ -16,44 +16,60 @@ export default function MoviePage() {
     console.log(response.data);
     setMovie(response.data);
   };
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(undefined);
   useEffect(() => {
     getMovieById(movieId);
   }, []);
   console.log("Id : " + movieId);
   console.log("Movie : " + movie);
+
+  function getCastDetails() {
+    console.log("in cast details");
+    let cast = movie.artists.filter(
+      (artist) => artist.role == "Actor" || artist.role == "Actress"
+    );
+    console.log("cast: ", cast);
+    return cast;
+  }
+
+  function getCrewDetails() {
+    return movie.artists.filter(
+      (artist) => artist.role != "Actor" && artist.role != "Actress"
+    );
+  }
+
   return (
-    <div>
-      <div
-        className={MovieStyler.trailerSection}
-        style={{
-          backgroundImage: "url(" + movie.background_image + ")",
-        }}
-      >
-        <div className={MovieStyler.gradient}>
-          <div className={MovieStyler.movieImageDesc}>
-            <div>
-              <img
-                className={MovieStyler.trailerNavImg}
-                src={movie.image_url}
-              />
-              <p className={MovieStyler.para}>In Cinemas</p>
+    movie && (
+      <div>
+        <div
+          className={MovieStyler.trailerSection}
+          style={{
+            backgroundImage: "url(" + movie.background_image + ")",
+          }}
+        >
+          <div className={MovieStyler.gradient}>
+            <div className={MovieStyler.movieImageDesc}>
+              <div>
+                <img
+                  className={MovieStyler.trailerNavImg}
+                  src={movie.image_url}
+                />
+                <p className={MovieStyler.para}>In Cinemas</p>
+              </div>
+              <MovieDetails movieDetails={movie} />
             </div>
-            <MovieDetails />
           </div>
         </div>
-      </div>
-      <div className={MovieStyler.body}>
-        <section className={MovieStyler.about}>
-          <h2 className={MovieStyler.heading}>About the Movie</h2>
-          <p className={MovieStyler.aboutLine}>{movie.about}</p>
-        </section>
-        <hr />
-        <div>
-          <section className={MovieStyler.castHeader}>
-            <h2>Cast</h2>
+        <div className={MovieStyler.body}>
+          <section className={MovieStyler.about}>
+            <h2 className={MovieStyler.heading}>About the Movie</h2>
+            <p className={MovieStyler.aboutLine}>{movie.about}</p>
           </section>
+          <hr />
           <div>
+            <section className={MovieStyler.castHeader}>
+              <h2>Cast</h2>
+            </section>
             <Carousel
               additionalTransfrom={0}
               arrows
@@ -107,16 +123,14 @@ export default function MoviePage() {
               slidesToSlide={2}
               swipeable
             >
-              <CastCard />
+              <CastCard castDetails={getCastDetails()} />
             </Carousel>
           </div>
-        </div>
-        <hr />
-        <div>
-          <section className={MovieStyler.castHeader}>
-            <h2>Crew</h2>
-          </section>
+          <hr />
           <div>
+            <section className={MovieStyler.castHeader}>
+              <h2>Crew</h2>
+            </section>
             <Carousel
               additionalTransfrom={0}
               arrows
@@ -170,11 +184,11 @@ export default function MoviePage() {
               slidesToSlide={2}
               swipeable
             >
-              <CrewCard />
+              <CrewCard crewDetails={getCrewDetails()} />
             </Carousel>
           </div>
         </div>
       </div>
-    </div>
+    )
   );
 }
