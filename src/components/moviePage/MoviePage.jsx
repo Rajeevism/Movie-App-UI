@@ -6,7 +6,6 @@ import CastCard from "../cast/CastCard";
 import CrewCard from "../crew/CrewCard";
 import MovieDetails from "../movieDetails/MovieDetails";
 import MovieStyler from "./MoviePage.module.css";
-import "react-multi-carousel/lib/styles.css";
 import { useParams } from "react-router-dom";
 
 export default function MoviePage() {
